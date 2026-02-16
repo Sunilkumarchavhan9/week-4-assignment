@@ -1,28 +1,31 @@
-# Anchor Escrow Program
+# Escrow Program (Anchor)
 
-A simple Solana smart contract built with Anchor. It implements a basic escrow for token swaps where:
+## Submission
+- GitHub Repo: [https://github.com/Sunilkumarchavhan9/week-4-assignment](https://github.com/Sunilkumarchavhan9/week-4-assignment)
 
-- The maker initializes an escrow PDA, deposits Token A into a vault, and specifies the amount of Token B to receive.
-- The taker can "take" the deal by depositing Token B to the maker and withdrawing Token A from the vault (closing the escrow and vault as well).
-- The maker can refund if no taker accepts, withdrawing Token A back and closing the escrow and vault.
+## Objective
+Create an Escrow Program using Anchor.
 
-The escrow uses PDAs for security and supports SPL tokens.
+## What Was Done
+1. Initialized an Anchor program.
+2. Implemented all escrow instructions:
+   - `make`
+   - `take`
+   - `refund`
+3. Wrote integration tests for each instruction flow in `tests/anchor-escrow-q1-26.ts`.
 
-## Prerequisites
-- Anchor CLI (version 0.32.1 or later) installed via AVM.
-- Surfpool CLI installed (for enhanced local testing and runbooks: `brew install surfpool` on macOS, or from source [surfpool](https://surfpool.run/)).
-- Solana CLI tools.
-- Node.js/Yarn for tests.
+## Program Files
+- `programs/anchor-escrow-q1-26/src/instructions/make.rs`
+- `programs/anchor-escrow-q1-26/src/instructions/take.rs`
+- `programs/anchor-escrow-q1-26/src/instructions/refund.rs`
+- `programs/anchor-escrow-q1-26/src/lib.rs`
 
-## Running Tests
-To run the integration tests against a Surfpool local validator:
+## Tests
+- Command used:
+  - `anchor test --skip-local-validator --skip-deploy`
+- Passing scenarios:
+  - Makes and refunds the escrow
+  - Makes and takes the escrow
 
-1. In one terminal window, start Surfpool in your project directory:
-`surfpool start`
-This launches a local Surfnet validator and deploys your program.
-
-2. In a new terminal window (in the same directory), run the Anchor tests against it:
-`anchor test --skip-local-validator`
-This will execute the tests in `tests/anchor-escrow-q1-26.ts`, covering make/refund and make/take scenarios.
-
-For standard local testing without Surfpool, just run `anchor test`.
+## Screenshot (Tests Passing)
+![Week 3 Tests Passing](./week-3.png)
