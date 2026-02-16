@@ -23,6 +23,6 @@ This launches a local Surfnet validator and deploys your program.
 
 2. In a new terminal window (in the same directory), run the Anchor tests against it:
 `anchor test --skip-local-validator`
-This will execute the tests in `tests/anchor-escrow-q4-25.ts`, covering make/refund and make/take scenarios.
+This will execute the tests in `tests/anchor-escrow-q1-26.ts`, covering make/refund and make/take scenarios.
 
 For standard local testing without Surfpool, just run `anchor test`.

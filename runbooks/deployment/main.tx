@@ -1,5 +1,5 @@
 ################################################################
-# Manage anchor-escrow-q4-25 deployment through Crypto Infrastructure as Code
+# Manage anchor-escrow-q1-26 deployment through Crypto Infrastructure as Code
 ################################################################
 
 addon "svm" {
@@ -7,9 +7,9 @@ addon "svm" {
     network_id = input.network_id
 }
 
-action "deploy_anchor_escrow_q4_25" "svm::deploy_program" {
-    description = "Deploy anchor_escrow_q4_25 program"
-    program = svm::get_program_from_anchor_project("anchor_escrow_q4_25") 
+action "deploy_anchor_escrow_q1_26" "svm::deploy_program" {
+    description = "Deploy anchor_escrow_q1_26 program"
+    program = svm::get_program_from_anchor_project("anchor_escrow_q1_26") 
     authority = signer.authority
     payer = signer.payer
     // Optional: if you want to deploy the program via a cheatcode when targeting a Surfnet, set `instant_surfnet_deployment = true`
